@@ -1,0 +1,27 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Alex Piarkouski \
+\
+Investigation observing geographical location, not considering time of requests. \
+\
+The three points of interests have noticeably different request distributions. \
+\
+POI1 has two primary and several secondary clusters of requests. The two primary clusters are concentrated at roughly 0-15km and 285-310km from POI1, while much smaller and more concentrated clusters of requests appear at roughly 160, 370 and 500km, and smaller but more spread out clusters appear at 800 and 1200km. The largest clusters could easily represent dense metro areas with a lot of interest in the POI, the small concentrated ones could be small towns or points of origin while the last two could be larger metro areas with less interest in POI1, because of their relative spawl. The POI is quite popular with over 8000 requests associated with it.\
+\
+POI3 has several small interest concentrations and one large, continuous main centre or requests. This dominant cluster is likely both populous due to its high concentration/spikes of requests and covers a lot of territory with urban sprawl, due to nearly continuous interest for over 100km. Several other clusters gather several hundred requests and must be taken into consideration. The POI is also quite popular with over 8000 requests associated with it, but with requests more concentrated. \
+\
+POI4 stands out as the point with much less interest that is spread thinner. There are two main areas of interest, which however do not stand out over smaller areas nearly as much as in the previous two POIs. There is a notable lack or large concentrated request areas, and smaller communities/points are seen more clearly. This POI\'92s furthest request came from only 855km away, relatively close compared to other POI\'92s. Notably, it does not have an interest spike within close proximity to it which indicates this is not an urban zone (or wildly unpopular with locals).\
+\
+POI1 is easy to test - isolating the rows with distances within two largest cluster estimates produces a lot of Edmonton entries nearby and Calgary entries about 290km away. This is consistent with the two largest cities in Alberta. After this discovery it is easy to spot many places with a naked eye - Red Deer, Fort McMurray, Saskatoon and Lower Mainland are all good (and correct) guesses for spikes in activity.\
+\
+POI3 draws my attention to the large spread out cluster, sorting for the 500km range produces a number of town names from the Greater Toronto Area. Searching for the spike round around the POI we find Montreal, a large metro area, and in-between we find Ottawa (with some points in Gatineau, which turns out to be right nearby). Important to note that it does seem that there are disproportionately many requests from the GTA compared to Montreal, given the populations of each. \
+\
+POI4 is more tricky as there is not a straightforward spike near the POI. I fairly easy filter the data to find the two largest clusters at Halifax and Moncton at about 70 and 150km respectively, while the closest point to the POI is 16km away at Truro, NS, which does not tell me much. At this point we know the POI is in the Maritimes which somewhat explains the lack of requests (so far closely correlated with large metro areas). We also know that the POI is not in the ocean, otherwise it would be closer to Moncton or St John. We can therefore conclude, without checking our answer yet, that the point is in Nova Scotia, somewhere south of Truro, most likely outside anywhere where people reside, explaining a lack of requests close by.\
+\
+Upon checking the POI coordinates we were generally right and have proven out hypotheses. The bridge around Forest Glen, NS, at POI4 is very soothing. \
+ }
